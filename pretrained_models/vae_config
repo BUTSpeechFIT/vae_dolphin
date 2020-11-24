@@ -1,0 +1,8 @@
+{
+  "v_dim": 20,
+  "u_dim": 20,
+  "emissnet_hid_dim": 512,
+  "infernet_hid_dim": 512,
+  "n_speakers": 101,
+  "x_dim": 257
+}

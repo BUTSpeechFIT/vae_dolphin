@@ -1,0 +1,11 @@
+soundfile
+numpy>=1.18
+scipy
+pathlib
+tqdm
+sacred
+torch
+tensorboard
+cython
+munkres
+h5py
