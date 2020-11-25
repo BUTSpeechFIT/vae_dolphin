@@ -29,11 +29,10 @@ with open('data/wsj0-mix_spat/tr') as f:
 utts = {}
 for spk in ['s1', 's2']:
     for utt in utt_keys:
-        paths = [path_to_wsj02mix_spat / subdir / spk / f'{utt}_{c}.wav' 
-                 for c in range(1,9)]
+        path = path_to_wsj02mix_spat / subdir / spk / f'{utt}.wav'
         utts[f'{utt}_{spk}'] = {
             'speaker': utt[:3] if spk == 's1' else utt.split('_')[2][:3],
-            'path': [str(path.absolute()) for path in paths]
+            'path': [str(path.absolute())]
             }
 
 with open(outdir / 'tr_1spk.json', 'w') as f:
@@ -47,10 +46,9 @@ with open('data/wsj0-mix_spat/tr') as f:
 
 utts = {}
 for utt in utt_keys:
-    paths = [path_to_wsj02mix_spat / subdir / 'mix' / f'{utt}_{c}.wav' 
-                for c in range(1,9)]
+    path = path_to_wsj02mix_spat / subdir / 'mix' / f'{utt}.wav' 
     utts[f'{utt}'] = {
-        'path': [str(path.absolute()) for path in paths]
+        'path': [str(path.absolute())]
         }
 
 with open(outdir / 'tr_mix.json', 'w') as f:
@@ -65,10 +63,9 @@ for low, high in zip(low_snrs, high_snrs):
     subdir = f'wsj0-mix_noise_{low}_{high}/2speakers_reverb/wav8k/min/tt/mix'
     utts = {}
     for utt in utt_keys:
-        paths = [path_to_wsj02mix_spat_with_noise / subdir / f'{utt}_{c}.wav' 
-                 for c in range(1,9)]
+        path = path_to_wsj02mix_spat_with_noise / subdir / f'{utt}.wav'
         utts[utt] = {
-            'path': [str(path.absolute()) for path in paths]
+            'path': [str(path.absolute())]
             }
 
     with open(outdir / f'tt_n{low}{high}_mix.json', 'w') as f:

@@ -82,11 +82,10 @@ for set in sets:
             json.dump(snrs, f, indent=2)
 
         for utt in tqdm(utt_list):
-            for c in range(1,9):
-                data, fs_check = sf.read(str(path_to_wsj0_2mix / path_suff / f'{utt}_{c}.wav'))
-                assert fs == fs_check, 'Inconsistency in sampling rates'
+            data, fs_check = sf.read(str(path_to_wsj0_2mix / path_suff / f'{utt}.wav'))
+            assert fs == fs_check, 'Inconsistency in sampling rates'
 
-                snr = snrs[utt]
-                mix_noise, noise = add_noise(data, snr)
+            snr = snrs[utt]
+            mix_noise, noise = add_noise(data, snr)
 
-                sf.write(str(outdata_dir / f'{utt}_{c}.wav'), mix_noise, fs)
+            sf.write(str(outdata_dir / f'{utt}.wav'), mix_noise, fs)
