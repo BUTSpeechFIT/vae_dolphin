@@ -1,6 +1,6 @@
 # Integration of variational autoencoder and spatial clustering for adaptive multi-channel neural speech separation
 
-This repository is the official implementation of Integration of variational autoencoder and spatial clustering for adaptive multi-channel neural speech separation.
+This repository is the official implementation of [Integration of variational autoencoder and spatial clustering for adaptive multi-channel neural speech separation](https://arxiv.org/abs/2011.11984).
 
 ## Requirements
 
