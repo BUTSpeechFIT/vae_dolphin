@@ -49,6 +49,7 @@ def run_inference(config):
     model = read_gmm_from_h5(config['model'], device) 
 
     # load noise model
+    assert config['noise_model'].exists(), f"Path {config['noise_model']} should exist."
     noise_model = get_noise_stats(config['noise_model'], None, None, None, None)
 
     for utt in tqdm(dataset.utts):
