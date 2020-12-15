@@ -151,7 +151,7 @@ class Dolphin:
 
         ln_qds_unnorm = []
         for i in range(self.n_classes):
-            qd1_unnorm = torch.tensor(spat_log_p[i]).to(self.device)
+            qd1_unnorm = torch.tensor(spat_log_p[i]).to(self.device).float()
             qd1_unnorm += spectral_log_p[i]
             ln_qds_unnorm.append(qd1_unnorm)
 
