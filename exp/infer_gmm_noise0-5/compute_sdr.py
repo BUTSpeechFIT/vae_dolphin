@@ -4,7 +4,6 @@ import soundfile as sf
 import numpy as np
 import json
 from pathlib import Path
-from pb_bss.evaluation.module_mir_eval import _bss_eval_sources_and_noise
 
 from evalbin.evaluate import compute_sdr
 
